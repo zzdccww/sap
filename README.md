@@ -10,30 +10,6 @@ SAP-SS-ARGO 是一个专为 SAP BTP Cloud Foundry 环境设计的轻量级 Node.
 
 缺点：较于之前没被流量监测的时候，代理速度较慢（这不是本脚本的错，是SAP限速了）。
 
-本脚本完全照抄“老王”大佬的 https://github.com/eooce/nodejs-argo 项目，包括二进制文件都下载于老王的仓库，感谢老王。
+web 文件：充当代理核心服务器（推测为 Xray / V2Ray 或定制的代理内核），负责在本地处理 Shadowsocks 和 Websocket 的加解密协议。
+bot 文件：充当 cloudflared 服务程序，负责使用 Cloudflare Argo Tunnel 和公网建立隧道建立连接。
 
-较于老王的nodejs-argo项目修改了几点：
-
-1.移除哪吒探针功能。
-
-2.移除临时隧道功能，强制固定隧道。
-
-3.把原项目三个协议：vmess、vless、trogan修改成了单shadowsocks协议。
-
-4.AI优化了TCP/Network策略（AI自己说的）。
-
-5.根路径返回伪造的Nginx欢迎页面（AI自己改的）。
-
-来个免责声明吧：
-
-本项目完全照抄，看到的自己玩玩得了。
-
-切勿滥用，做公共代理是违法的。
-
-切勿商用，也是违法的。
-
-使用本项目产生的任何后果由使用者自行承担，作者不承担任何法律责任。
-
-部署方法：会的都会。
-
-再次感谢老王大佬，把原项目的Star点起来 https://github.com/eooce/nodejs-argo ，至于这个项目你们随意Star ⭐️
