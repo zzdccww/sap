@@ -10,6 +10,6 @@ SAP-SS-ARGO 是一个专为 SAP BTP Cloud Foundry 环境设计的轻量级 Node.
 
 缺点：较于之前没被流量监测的时候，代理速度较慢（这不是本脚本的错，是SAP限速了）。
 
-web 文件：充当代理核心服务器（推测为 Xray / V2Ray 或定制的代理内核），负责在本地处理 Shadowsocks 和 Websocket 的加解密协议。
+web 文件：充当代理核心服务器（为 Xray / V2Ray 或定制的代理内核），负责在本地处理 Shadowsocks 和 Websocket 的加解密协议。
 bot 文件：充当 cloudflared 服务程序，负责使用 Cloudflare Argo Tunnel 和公网建立隧道建立连接。
 
